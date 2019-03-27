@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="LeetCode,简单算法,">
 
 
 
@@ -79,13 +79,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="技术小屋">
-<meta property="og:url" content="https://blog.wxainn.com/index.html">
+<meta name="description" content="38. 报数 难度：简单 题库地址：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/  这道题算法不难，难的是读懂题😂，下面会说一下这道题到底要干嘛 题目描述报数序列是一个整数序列，按照其中的整数的顺序进行报数，得到下一个数。其前五项如下： 123451.     12.     113.     214.">
+<meta name="keywords" content="LeetCode,简单算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="报数">
+<meta property="og:url" content="https://blog.wxainn.com/2019/03/27/LeetCode_0038_Count-and-Say/index.html">
 <meta property="og:site_name" content="技术小屋">
+<meta property="og:description" content="38. 报数 难度：简单 题库地址：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/  这道题算法不难，难的是读懂题😂，下面会说一下这道题到底要干嘛 题目描述报数序列是一个整数序列，按照其中的整数的顺序进行报数，得到下一个数。其前五项如下： 123451.     12.     113.     214.">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://image.wxainn.com/15536454800783.jpg">
+<meta property="og:updated_time" content="2019-03-27T00:40:14.137Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="技术小屋">
+<meta name="twitter:title" content="报数">
+<meta name="twitter:description" content="38. 报数 难度：简单 题库地址：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/  这道题算法不难，难的是读懂题😂，下面会说一下这道题到底要干嘛 题目描述报数序列是一个整数序列，按照其中的整数的顺序进行报数，得到下一个数。其前五项如下： 123451.     12.     113.     214.">
+<meta name="twitter:image" content="http://image.wxainn.com/15536454800783.jpg">
 
 
 
@@ -115,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.wxainn.com/">
+  <link rel="canonical" href="https://blog.wxainn.com/2019/03/27/LeetCode_0038_Count-and-Say/">
 
 
 
 
 
-  <title>技术小屋</title>
+  <title>报数 | 技术小屋</title>
   
 
 
@@ -149,8 +156,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -243,9 +249,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -275,9 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/27/LeetCode_0038_Count-and-Say/" itemprop="url">报数</a></h1>
+          <h1 class="post-title" itemprop="name headline">报数</h1>
         
 
         <div class="post-meta">
@@ -370,23 +374,35 @@
       
 
       
-        
-          
-          38. 报数
-难度：简单
-题库地址：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
+        <h1 id="38-报数"><a href="#38-报数" class="headerlink" title="38. 报数"></a>38. 报数</h1><blockquote>
+<p>难度：简单</p>
+<p>题库地址：<a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/</a></p>
+</blockquote>
+<p>这道题算法不难，难的是读懂题😂，下面会说一下这道题到底要干嘛</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>报数序列是一个整数序列，按照其中的整数的顺序进行报数，得到下一个数。其前五项如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.     1</span><br><span class="line">2.     11</span><br><span class="line">3.     21</span><br><span class="line">4.     1211</span><br><span class="line">5.     111221</span><br></pre></td></tr></table></figure>
+<p><code>1</code> 被读作  <code>&quot;one 1&quot;</code> (“一个一”) , 即 <code>11</code>。<br><code>11</code> 被读作 <code>&quot;two 1s&quot;</code> (“两个一”）, 即 <code>21</code>。<br><code>21</code> 被读作 <code>&quot;one 2&quot;</code>,  <code>&quot;one 1&quot;</code> （”一个二” ,  “一个一”) , 即 <code>1211</code>。</p>
+<p>给定一个正整数 $n（1 ≤ n ≤ 30$，输出报数序列的第 $n$ 项。</p>
+<p>注意：整数顺序将表示为一个字符串。</p>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 1</span><br><span class="line">输出: &quot;1&quot;</span><br></pre></td></tr></table></figure>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 4</span><br><span class="line">输出: &quot;1211&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>读完题一脸懵逼，在读一遍还是一脸懵逼，读了几遍才知道要干嘛。</p>
+<p><strong>这道题其实是给定一个正整数 $n（1 ≤ n ≤ 30$，找到这项对应的报数序列。</strong></p>
+<ul>
+<li>怎么找？答案是根据这个 $n$ 的前一项进行报数</li>
+<li>怎么报数？从左往右，遇到相同的数字看成一个整体连在一起读<ul>
+<li>比如第 $4$ 项是<code>1211</code>，拆分后可以看做<code>1</code> <code>2</code> <code>11</code>，读出来就是，<code>1</code>个<code>1</code>，<code>1</code>个<code>2</code>，<code>2</code>个<code>1</code>，将这几个数字从左到右拼在一起就是<code>111221</code></li>
+<li>比如第 $5$ 项是<code>111221</code>，拆分后可以看做<code>111</code> <code>22</code> <code>1</code>，读出来就是，<code>3</code>个<code>1</code>，<code>2</code>个<code>2</code>，<code>1</code>个<code>1</code>，将这几个数字从左到右拼在一起就是<code>312211</code></li>
+</ul>
+</li>
+<li>要算出当前项的报数序列，就要先算出前一项的报数序列，明显要用递归方法，而递归的约束条件就是第 $1$ 项这个初始条件<code>1</code>，初始条件不同后续的序列就不同</li>
+</ul>
+<p>Java实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">countAndSay</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"1"</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        String before = countAndSay(n - <span class="number">1</span>);</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="comment">// 数字分组的依据，记录当前对那个数字进行分组，默认取第一个</span></span><br><span class="line">        <span class="keyword">char</span> c = before.charAt(<span class="number">0</span>);</span><br><span class="line">        <span class="comment">// 因为默认取第一个数字作为分组依据，所以当前组的数字个数已经为1了</span></span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 从第2个数字开始遍历（如果字符串长度 &gt; 1）</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; before.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">char</span> tmp = before.charAt(i);</span><br><span class="line">            <span class="keyword">if</span> (c == tmp) &#123;</span><br><span class="line">                <span class="comment">// 如果当前遍历数字和分组数字一致，则继续遍历，该组个数 +1</span></span><br><span class="line">                count++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 如果当前遍历数字和分组数字不一致，将分组数字拼接到结果中</span></span><br><span class="line">                <span class="comment">// 重新开始一个分组，注意这里拼接的已经是上一个分组数据了</span></span><br><span class="line">                <span class="comment">// 所以字符串最后一个分组是不会在这里拼接到最终返回结果中的，只是保存了</span></span><br><span class="line">                sb.append(count).append(Character.getNumericValue(c));</span><br><span class="line">                c = tmp;</span><br><span class="line">                count = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果上一个只有一位，根本不会进入for循环，我们只记录了代表分组的数字，和个数，还没拼接到结果中</span></span><br><span class="line">        <span class="comment">// 遍历到for循环的最后一位数字时，结果只是保存在了 c、count两个变量中，这里拼接上</span></span><br><span class="line">        sb.append(count).append(Character.getNumericValue(c));</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：<br><img src="http://image.wxainn.com/15536454800783.jpg" alt="运行结果"></p>
 
-这道题算法不难，难的是读懂题😂，下面会说一下这道题到底要干嘛
-题目描述报数序列是一个整数序列，按照其中的整数的顺序进行报
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/27/LeetCode_0038_Count-and-Say/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
     
@@ -401,372 +417,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.wxainn.com/2019/03/24/bar3D-music/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王晓安">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术小屋">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/24/bar3D-music/" itemprop="url">Echarts Music Visualization</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-24T21:23:48+08:00">
-                2019-03-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/收藏/" itemprop="url" rel="index">
-                    <span itemprop="name">收藏</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
           
-
+            <a href="/tags/简单算法/" rel="tag"># 简单算法</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/03/24/bar3D-music/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/24/bar3D-music/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/03/24/bar3D-music/" class="leancloud_visitors" data-flag-title="Echarts Music Visualization">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-          
-
-    
-        
-        Bar 3D - ECHARTS-GL
-        
-         
-        
-    
-    
-        
-        
-        
-        
-        
-        
-            va
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/24/bar3D-music/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/24/bar3D-music/" rel="next" title="Echarts Music Visualization">
+                <i class="fa fa-chevron-left"></i> Echarts Music Visualization
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.wxainn.com/2019/03/23/LeetCode_0026_Remove-Duplicates-from-Sorted-Array/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王晓安">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术小屋">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/23/LeetCode_0026_Remove-Duplicates-from-Sorted-Array/" itemprop="url">删除排序数组中的重复项</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-23T20:01:27+08:00">
-                2019-03-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/03/23/LeetCode_0026_Remove-Duplicates-from-Sorted-Array/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/23/LeetCode_0026_Remove-Duplicates-from-Sorted-Array/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/03/23/LeetCode_0026_Remove-Duplicates-from-Sorted-Array/" class="leancloud_visitors" data-flag-title="删除排序数组中的重复项">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          
-难度：简单
-题库地址：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
-
-题目描述给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/23/LeetCode_0026_Remove-Duplicates-from-Sorted-Array/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -776,157 +458,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.wxainn.com/2019/03/23/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王晓安">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术小屋">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/23/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-23T09:32:15+08:00">
-                2019-03-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/03/23/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/23/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/03/23/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/23/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -934,6 +470,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -954,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1015,6 +574,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#38-报数"><span class="nav-number">1.</span> <span class="nav-text">38. 报数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解题思路"><span class="nav-number">1.2.</span> <span class="nav-text">解题思路</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1148,6 +723,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1165,6 +744,18 @@
       <script id="dsq-count-scr" src="https://wxainn.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://blog.wxainn.com/2019/03/27/LeetCode_0038_Count-and-Say/';
+          this.page.identifier = '2019/03/27/LeetCode_0038_Count-and-Say/';
+          this.page.title = '报数';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://wxainn.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
